@@ -2,6 +2,8 @@ const express = require('express')
 const cors = require('cors')
 const app = express();
 const port = process.env.PORT || 3000;
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+require('dotenv').config()
 
 const admin = require("firebase-admin");
 // Hello
@@ -10,8 +12,7 @@ const decoded = Buffer.from(process.env.FB_SERVICE_KEY, 'base64').toString('utf8
 
 const serviceAccount = JSON.parse(decoded);
 
-const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-require('dotenv').config()
+
 
 
 // middleware
